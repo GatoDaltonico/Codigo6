@@ -1,0 +1,37 @@
+//Verónica Chávez, me evaluó Verónica Herrera con 5/5, todo corre bien y se hicieron las correcciones pertinentes
+package codigo5;
+
+package codigo6;
+
+import java.util.Scanner; // Importación necesaria para usar Scanner
+
+public class Codigo6 {
+    public static void main(String[] args) {
+        int[] n = new int[20]; // Corrección en la declaración del array
+
+        // Llenado del array con números aleatorios entre 20 y 400
+        for (int i = 0; i < 20; i++) {
+            n[i] = (int) (Math.random() * 381) + 20;
+            System.out.print(n[i] + " "); // Corrección en el método print
+        }
+
+        System.out.println("\n¿Qué números quiere resaltar? "); // Corrección en println
+        System.out.print("(1 – los múltiplos de 5, 2 – los múltiplos de 7): ");
+
+        Scanner scanner = new Scanner(System.in); // Uso de Scanner para la entrada del usuario
+        int opcion = scanner.nextInt(); // Corrección en la lectura de la entrada
+
+        int multiplo = (opcion == 1) ? 5 : 7; // Corrección en el operador ternario
+
+        // Iteración sobre el array para imprimir los números resaltados
+        for (int e : n) { // Uso de for-each y corrección en el tipo de dato (int en lugar de char)
+            if (e % multiplo == 0) {
+                System.out.print("[" + e + "] ");
+            } else {
+                System.out.print(e + " "); // Corrección en el método print
+            }
+        }
+
+        scanner.close(); // Cerrando el scanner
+    }
+}
